@@ -19,6 +19,12 @@ print(
     f"Press {optionStart} : To send a request workload data from the server\n"
 )
 
+def is_input_numeric(var, str):
+    while ~(var.isnumeric()):
+        var = raw_input(f"Please enter {str}: ")
+ 
+
+
 # The length of the input has to be 1 character for the program to work
 while ~(userInput.isnumeric() and len(userInput) != 1):
     userInput = raw_input("Please enter your selection from the options listed above: ")
