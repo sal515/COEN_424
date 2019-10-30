@@ -6,7 +6,7 @@ import requests
 
 from time import sleep
 
-server_url = "http://127.0.0.1:5000/post_test"
+post_request_url = "http://127.0.0.1:5000/post_test"
 
 # Client Request data
 rfwId = -1  # 1. RFWID
@@ -79,7 +79,7 @@ while 1:
     print("woke up")
 
     try:
-        r = requests.post(server_url, json=request_json)
+        r = requests.post(post_request_url, json=request_json)
 
         # print(r.json())
         batch_data_json = r.json()
