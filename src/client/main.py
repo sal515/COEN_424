@@ -55,6 +55,7 @@ while 1:
     # batchSize = input("Please enter Batch Size: ")
     # ------ input -------------
 
+
     # ------ delete -------------
 
     rfwId = -1
@@ -62,7 +63,7 @@ while 1:
     workloadMetric = -1
     batchUnit = 2
     batchId = 1
-    batchSize = 2
+    batchSize = 3
 
     # ------ delete -------------
 
@@ -83,12 +84,13 @@ while 1:
 
         # print(r.json())
         batch_data_json = r.json()
-        print(batch_data_json[0])
-        print(batch_data_json[1])
-        print(batch_data_json[2])
-        print(batch_data_json[3])
 
-        # print(batch_data_json[4])
+        batch_length = len(batch_data_json)
+
+        counter = 0
+        for x in batch_data_json:
+            counter = counter + 1
+            print(f"{counter} : {x}")
 
 
     except:

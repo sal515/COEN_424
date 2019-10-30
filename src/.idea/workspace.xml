@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92804498-069a-4b25-b30e-720738f01f5e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client_data/client_request.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/client_data/client_request.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_flask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server_flask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server_flask/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_flask/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server_flask/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_flask/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_flask/response_data/clientID_response.json" beforeDir="false" afterPath="$PROJECT_DIR$/server_flask/response_data/clientID_response.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +18,7 @@
     <SUITE FILE_PATH="coverage/src$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1571437907927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/src$data_extractor_to_json.coverage" NAME="data_extractor_to_json Coverage Results" MODIFIED="1571290488737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/src$main.coverage" NAME="main Coverage Results" MODIFIED="1571290650162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/src$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1572425786256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
+    <SUITE FILE_PATH="coverage/src$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1572443054033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
     <SUITE FILE_PATH="coverage/src$data_extractor.coverage" NAME="data_extractor Coverage Results" MODIFIED="1571285844513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
@@ -39,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="89" column="31" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
+            <state relative-caret-position="191">
+              <caret line="91" column="33" selection-start-line="91" selection-start-column="33" selection-end-line="91" selection-end-column="33" />
               <folding>
                 <element signature="e#83#94#0" expanded="true" />
               </folding>
@@ -271,12 +270,12 @@
       <workItem from="1571280231619" duration="12849000" />
       <workItem from="1571418371208" duration="22710000" />
       <workItem from="1572400206660" duration="675000" />
-      <workItem from="1572401030494" duration="19444000" />
+      <workItem from="1572401030494" duration="20734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55678000" />
+    <option name="totallyTimeSpent" value="56968000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="0" width="974" height="1047" extended-state="0" />
@@ -336,7 +335,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/client/main.py</url>
-          <line>83</line>
+          <line>84</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -372,6 +371,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="103" column="4" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -382,17 +388,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="103" column="4" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="89" column="31" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
+        <state relative-caret-position="191">
+          <caret line="91" column="33" selection-start-line="91" selection-start-column="33" selection-end-line="91" selection-end-column="33" />
           <folding>
             <element signature="e#83#94#0" expanded="true" />
           </folding>
