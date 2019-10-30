@@ -1,6 +1,11 @@
-import json
+# required libraries:
+# install requests library if needed:  pip install requests
 
-from pip._vendor.distlib.compat import raw_input
+import json
+import requests
+
+from time import sleep
+
 
 # Client Request data
 rfwId = -1  # 1. RFWID
@@ -11,49 +16,63 @@ batchId = -1  # 5th batch or 6th batch etc
 batchSize = -1  # how many batches to return
 
 # UI
-optionStart = 1
-userInput = ''
+# userInput = ''
+
+# headers = {'Content-type': 'multipart/form-data'}
+# with open("client_data/client_request.json", "r") as read_file:
+#     data = json.load(read_file)
+# files = {'client_data': data}
+# r = requests.post(url, files=files, data=data, headers=headers)
 
 print(
-    # f"What would you like to do?\n"
-    f"Press {optionStart} : To send a request workload data from the server\n"
+    f"Press {1} : To send a request workload data from the server\n"
+    f"Press {2} : To exit application\n"
 )
 
-def is_input_numeric(var, str):
-    while ~(var.isnumeric()):
-        var = raw_input(f"Please enter {str}: ")
- 
+
+# def is_input_numeric(var, check_str):
+#     while ~(var.isnumeric()):
+#         var = input(f"Please enter {check_str}: ")
 
 
 # The length of the input has to be 1 character for the program to work
-while ~(userInput.isnumeric() and len(userInput) != 1):
-    userInput = raw_input("Please enter your selection from the options listed above: ")
-    userInput = userInput.lower()
+while 1:
 
-    if userInput.isnumeric():
-        # print(f"Test: Your input was {userInput}")
-        rfwId = raw_input("Please enter RFW ID: ")
-        benchmarkType = raw_input("Please enter Benchmark Type: ")
-        workloadMetric = raw_input("Please enter Workload Metric: ")
-        batchUnit = raw_input("Please enter Batch Unit: ")
-        batchId = raw_input("Please enter Batch ID: ")
-        batchSize = raw_input("Please enter Batch Size: ")
+    # userInput = input("Please enter your selection from the options listed above: ")
+    # userInput = userInput.lower()
+    #
+    # if userInput == "2":
+    #     break
+    #
+    # rfwId = input("Please enter RFW ID: ")
+    benchmarkType = input("Please enter Benchmark Type -> \n00 - DVD_Test, \n01 - DVD_Train, \n10 - NDBench_Test, \n11 - NDBench_Train: \nSelection -> ")
+    # workloadMetric = input("Please enter Workload Metric: ")
+    # batchUnit = input("Please enter Batch Unit: ")
+    # batchId = input("Please enter Batch ID: ")
+    # batchSize = input("Please enter Batch Size: ")
 
-        request_json = {
-            "rfwId": rfwId,
-            "benchmarkType": benchmarkType,
-            "workloadMetric": workloadMetric,
-            "batchUnit": batchUnit,
-            "batchId": batchId,
-            "batchSize": batchSize
-        }
+    request_json = {
+        "rfwId": rfwId,
+        "benchmarkType": benchmarkType,
+        "workloadMetric": workloadMetric,
+        "batchUnit": batchUnit,
+        "batchId": batchId,
+        "batchSize": batchSize
+    }
 
+    sleep(4)
+    print("woke up")
+    try:
+        r = requests.post("http://127.0.0.1:5000/post_test", json=request_json)
+    except:
+        print("Error: Could not send post request to server")
+
+    try:
         with open("client_data/client_request.json", 'w') as file:
             json.dump(request_json, file)
-
             # Save the JSON
             # file.write(output)
+        # break
+    except:
+        print("Error: Could not write to json file")
 
-        break
-
-# UI
