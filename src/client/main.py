@@ -6,6 +6,7 @@ import requests
 
 from time import sleep
 
+server_url = "http://127.0.0.1:5000/post_test"
 
 # Client Request data
 rfwId = -1  # 1. RFWID
@@ -29,15 +30,17 @@ print(
     f"Press {2} : To exit application\n"
 )
 
-
 # def is_input_numeric(var, check_str):
 #     while ~(var.isnumeric()):
 #         var = input(f"Please enter {check_str}: ")
 
 
-# The length of the input has to be 1 character for the program to work
 while 1:
 
+    # Constraints
+    # batchId > 0
+
+    # ------ input -------------
     # userInput = input("Please enter your selection from the options listed above: ")
     # userInput = userInput.lower()
     #
@@ -45,11 +48,23 @@ while 1:
     #     break
     #
     # rfwId = input("Please enter RFW ID: ")
-    benchmarkType = input("Please enter Benchmark Type -> \n00 - DVD_Test, \n01 - DVD_Train, \n10 - NDBench_Test, \n11 - NDBench_Train: \nSelection -> ")
+    # benchmarkType = input("Please enter Benchmark Type -> \n00 - DVD_Test, \n01 - DVD_Train, \n10 - NDBench_Test, \n11 - NDBench_Train: \nSelection -> ")
     # workloadMetric = input("Please enter Workload Metric: ")
     # batchUnit = input("Please enter Batch Unit: ")
     # batchId = input("Please enter Batch ID: ")
     # batchSize = input("Please enter Batch Size: ")
+    # ------ input -------------
+
+    # ------ delete -------------
+
+    rfwId = -1
+    benchmarkType = "00"
+    workloadMetric = -1
+    batchUnit = 2
+    batchId = 1
+    batchSize = 2
+
+    # ------ delete -------------
 
     request_json = {
         "rfwId": rfwId,
@@ -60,10 +75,22 @@ while 1:
         "batchSize": batchSize
     }
 
-    sleep(4)
+    sleep(6)
     print("woke up")
+
     try:
-        r = requests.post("http://127.0.0.1:5000/post_test", json=request_json)
+        r = requests.post(server_url, json=request_json)
+
+        # print(r.json())
+        batch_data_json = r.json()
+        print(batch_data_json[0])
+        print(batch_data_json[1])
+        print(batch_data_json[2])
+        print(batch_data_json[3])
+
+        # print(batch_data_json[4])
+
+
     except:
         print("Error: Could not send post request to server")
 
@@ -75,4 +102,3 @@ while 1:
         # break
     except:
         print("Error: Could not write to json file")
-
