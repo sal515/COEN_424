@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a1c3d37-bd9b-461e-894a-cdad924481d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/.idea/client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/example.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/example.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc" beforeDir="false" afterPath="$PROJECT_DIR$/grpc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc/examples/python/helloworld/greeter_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/examples/python/helloworld/greeter_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../protos/batch_request.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../protos/batch_request.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/batch_request_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../server/batch_request_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/batch_request_pb2_grpc.py" beforeDir="false" afterPath="$PROJECT_DIR$/../server/batch_request_pb2_grpc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/batch_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/../server/batch_server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +23,7 @@
             <entry file="file://$PROJECT_DIR$/grpc/examples/python/helloworld/greeter_client.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="351">
-                  <caret line="30" column="60" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="60" />
+                  <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
                   <folding>
                     <element signature="e#649#686#0" expanded="true" />
                   </folding>
@@ -110,8 +104,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="48" />
+    <option name="y" value="43" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -204,12 +198,12 @@
       <workItem from="1572444311243" duration="3309000" />
       <workItem from="1572485163352" duration="158000" />
       <workItem from="1572822233569" duration="1769000" />
-      <workItem from="1572833204818" duration="6767000" />
+      <workItem from="1572833204818" duration="7461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12003000" />
+    <option name="totallyTimeSpent" value="12697000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -307,7 +301,7 @@
     <entry file="file://$PROJECT_DIR$/grpc/examples/python/helloworld/greeter_client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
-          <caret line="30" column="60" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="60" />
+          <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
           <folding>
             <element signature="e#649#686#0" expanded="true" />
           </folding>
