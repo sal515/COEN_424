@@ -1,0 +1,49 @@
+// Copyright 2015 gRPC authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+
+
+// Go to directory with the main driver for the server
+// python -m grpc_tools.protoc -I../protos --python_out=. --grpc_python_out=. ../protos/batch_request.proto 
+
+
+syntax = "proto3";
+
+// option java_multiple_files = true;
+// option java_package = "io.grpc.examples.helloworld";
+// option java_outer_classname = "HelloWorldProto";
+// option objc_class_prefix = "HLW";
+
+package batch;
+
+// The batch service definition.
+service batch {
+  // Sends a batch request
+  rpc getBatch (batch_info) returns (batch_data) {}
+}
+
+// The request message contains the required batch information
+message batch_info {
+  string rfwId = 1;
+  int32 benchmarkType = 2; // 00 - DVD_Test, 01 - DVD_Train, 10 - NDBench_Test, 11 - NDBench_Train
+  int32 workloadMetric = 3; // 00 - CPU or 01 - NetworkIn or 10 - NetworkOut or 11 - Memory 
+  int32 batchUnit = 4;
+  int32 batchId = 5; 
+  int32 batchSize = 6;
+}
+
+// The response message containing the batch data
+message batch_data {
+  string response_batch = 1;
+}
