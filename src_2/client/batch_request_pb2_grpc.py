@@ -17,7 +17,7 @@ class batchStub(object):
     self.getBatch = channel.unary_unary(
         '/batch.batch/getBatch',
         request_serializer=batch__request__pb2.batch_info.SerializeToString,
-        response_deserializer=batch__request__pb2.batch_data.FromString,
+        response_deserializer=batch__request__pb2.batch_response.FromString,
         )
 
 
@@ -38,7 +38,7 @@ def add_batchServicer_to_server(servicer, server):
       'getBatch': grpc.unary_unary_rpc_method_handler(
           servicer.getBatch,
           request_deserializer=batch__request__pb2.batch_info.FromString,
-          response_serializer=batch__request__pb2.batch_data.SerializeToString,
+          response_serializer=batch__request__pb2.batch_response.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
