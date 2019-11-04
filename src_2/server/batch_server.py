@@ -30,17 +30,12 @@ import batch_request_pb2_grpc
 class batch(batch_request_pb2_grpc.batchServicer):
 
     def getBatch(self, request, context):
-        return batch_request_pb2.batch_data(
+        return batch_request_pb2.batch_response(
             response_batch=f"param1: {request.rfwId} param2: {request.benchmarkType} param3: {request.workloadMetric}")
-
-    # def SayHello(self, request, context):
-    #     return helloworld_pb2.HelloReply(message='Hello, %s!' % request.name)
-
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     batch_request_pb2_grpc.add_batchServicer_to_server(batch(), server)
-        # add_GreeterServicer_to_server(Greeter(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
     server.wait_for_termination()

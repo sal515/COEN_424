@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='batch',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13\x62\x61tch_request.proto\x12\x05\x62\x61tch\"\x81\x01\n\nbatch_info\x12\r\n\x05rfwId\x18\x01 \x01(\t\x12\x15\n\rbenchmarkType\x18\x02 \x01(\x05\x12\x16\n\x0eworkloadMetric\x18\x03 \x01(\x05\x12\x11\n\tbatchUnit\x18\x04 \x01(\x05\x12\x0f\n\x07\x62\x61tchId\x18\x05 \x01(\x05\x12\x11\n\tbatchSize\x18\x06 \x01(\x05\"$\n\nbatch_data\x12\x16\n\x0eresponse_batch\x18\x01 \x01(\t2;\n\x05\x62\x61tch\x12\x32\n\x08getBatch\x12\x11.batch.batch_info\x1a\x11.batch.batch_data\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x13\x62\x61tch_request.proto\x12\x05\x62\x61tch\"\x81\x01\n\nbatch_info\x12\r\n\x05rfwId\x18\x01 \x01(\t\x12\x15\n\rbenchmarkType\x18\x02 \x01(\x05\x12\x16\n\x0eworkloadMetric\x18\x03 \x01(\x05\x12\x11\n\tbatchUnit\x18\x04 \x01(\x05\x12\x0f\n\x07\x62\x61tchId\x18\x05 \x01(\x05\x12\x11\n\tbatchSize\x18\x06 \x01(\x05\"(\n\x0e\x62\x61tch_response\x12\x16\n\x0eresponse_batch\x18\x01 \x01(\t2?\n\x05\x62\x61tch\x12\x36\n\x08getBatch\x12\x11.batch.batch_info\x1a\x15.batch.batch_response\"\x00\x62\x06proto3')
 )
 
 
@@ -92,15 +92,15 @@ _BATCH_INFO = _descriptor.Descriptor(
 )
 
 
-_BATCH_DATA = _descriptor.Descriptor(
-  name='batch_data',
-  full_name='batch.batch_data',
+_BATCH_RESPONSE = _descriptor.Descriptor(
+  name='batch_response',
+  full_name='batch.batch_response',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='response_batch', full_name='batch.batch_data.response_batch', index=0,
+      name='response_batch', full_name='batch.batch_response.response_batch', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -119,11 +119,11 @@ _BATCH_DATA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=162,
-  serialized_end=198,
+  serialized_end=202,
 )
 
 DESCRIPTOR.message_types_by_name['batch_info'] = _BATCH_INFO
-DESCRIPTOR.message_types_by_name['batch_data'] = _BATCH_DATA
+DESCRIPTOR.message_types_by_name['batch_response'] = _BATCH_RESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 batch_info = _reflection.GeneratedProtocolMessageType('batch_info', (_message.Message,), {
@@ -133,12 +133,12 @@ batch_info = _reflection.GeneratedProtocolMessageType('batch_info', (_message.Me
   })
 _sym_db.RegisterMessage(batch_info)
 
-batch_data = _reflection.GeneratedProtocolMessageType('batch_data', (_message.Message,), {
-  'DESCRIPTOR' : _BATCH_DATA,
+batch_response = _reflection.GeneratedProtocolMessageType('batch_response', (_message.Message,), {
+  'DESCRIPTOR' : _BATCH_RESPONSE,
   '__module__' : 'batch_request_pb2'
-  # @@protoc_insertion_point(class_scope:batch.batch_data)
+  # @@protoc_insertion_point(class_scope:batch.batch_response)
   })
-_sym_db.RegisterMessage(batch_data)
+_sym_db.RegisterMessage(batch_response)
 
 
 
@@ -148,8 +148,8 @@ _BATCH = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=200,
-  serialized_end=259,
+  serialized_start=204,
+  serialized_end=267,
   methods=[
   _descriptor.MethodDescriptor(
     name='getBatch',
@@ -157,7 +157,7 @@ _BATCH = _descriptor.ServiceDescriptor(
     index=0,
     containing_service=None,
     input_type=_BATCH_INFO,
-    output_type=_BATCH_DATA,
+    output_type=_BATCH_RESPONSE,
     serialized_options=None,
   ),
 ])

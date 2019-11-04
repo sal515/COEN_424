@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9be2e69a-20f7-49f6-adc1-a7c08c227de6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/.idea/client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../example/.idea/example.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../example/.idea/example.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../example/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../example/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../example/grpc" beforeDir="false" afterPath="$PROJECT_DIR$/../example/grpc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../protos/batch_request.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../protos/batch_request.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/batch_server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/batch_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-              <folding>
-                <element signature="e#649#679#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -47,8 +37,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="48" />
+    <option name="y" value="43" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -99,12 +89,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572839931254</updated>
-      <workItem from="1572839947625" duration="4060000" />
+      <workItem from="1572839947625" duration="4126000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4060000" />
+    <option name="totallyTimeSpent" value="4126000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -139,11 +129,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/batch_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#649#679#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
