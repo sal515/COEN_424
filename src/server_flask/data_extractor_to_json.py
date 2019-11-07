@@ -11,6 +11,9 @@ NDBench_training_json = "workload_data_json/NDBench-training.json"
 DVD_testing_json = "workload_data_json/DVD-testing.json"
 DVD_training_json = "workload_data_json/DVD-training.json"
 
+csv_files = [NDBench_testing, NDBench_training, DVD_testing, DVD_training]
+json_files = [NDBench_testing_json, NDBench_training_json, DVD_testing_json, DVD_training_json]
+
 
 # Open the CSV
 def generate_json_from_csv(csv_file_path, json_file_path):
@@ -33,8 +36,6 @@ def generate_json_from_csv(csv_file_path, json_file_path):
     except:
         print("Couldn't open CSV file")
 
-    # print(f"Test: {output}")
-
     try:
         with open(json_file_path, 'w') as file:
             # Save the JSON
@@ -45,27 +46,30 @@ def generate_json_from_csv(csv_file_path, json_file_path):
         print("Couldn't save the JSON file")
 
 
-generate_json_from_csv(NDBench_testing, NDBench_testing_json)
-generate_json_from_csv(NDBench_training, NDBench_training_json)
-generate_json_from_csv(DVD_testing, DVD_testing_json)
-generate_json_from_csv(DVD_training, DVD_training_json)
+def remove_header_row(json_file):
+    try:
+        with open(json_file, 'r') as f:
+            remove_first_element = json.load(f)
+            del remove_first_element[0]
+            f.close()
 
-# pretty_print_json = json.dumps(remove_first_element, indent=4)
+        with open(json_file, 'w') as f:
+            json.dump(remove_first_element, f)
+            # f.write(remove_first_element)
+            # f.close()
 
-try:
-    with open(NDBench_testing_json, 'r') as f:
-        remove_first_element = json.load(f)
-        del remove_first_element[0]
-        f.close()
-
-        # print(remove_first_element[0])
+    except:
+        print("Error modifying the JSON file")
 
 
-    with open(NDBench_testing_json, 'w') as f:
-        json.dump(remove_first_element, f)
+for i in range(0, len(csv_files)):
+    generate_json_from_csv(csv_files[i], json_files[i])
+    remove_header_row(json_files[i])
 
-        # f.write(remove_first_element)
-        # f.close()
+    # What the loop is doing:
+    # generate_json_from_csv(NDBench_testing, NDBench_testing_json)
+    # generate_json_from_csv(NDBench_training, NDBench_training_json)
+    # generate_json_from_csv(DVD_testing, DVD_testing_json)
+    # generate_json_from_csv(DVD_training, DVD_training_json)
 
-except:
-    print("Error modifying the JSON file")
+    # pretty_print_json = json.dumps(remove_first_element, indent=4)

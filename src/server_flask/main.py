@@ -9,10 +9,10 @@ DVD_training_json = "workload_data_json/DVD-training.json"
 
 def file_selector(benchmark_type_val):
     switcher = {
-        "00": NDBench_testing_json,
-        "01": NDBench_training_json,
-        "10": DVD_testing_json,
-        "11": DVD_training_json
+        1: NDBench_testing_json,
+        2: NDBench_training_json,
+        3: DVD_testing_json,
+        4: DVD_training_json
     }
     return switcher.get(benchmark_type_val, "null")
 
@@ -33,7 +33,7 @@ def generate_batch_data_response(user_request):
 
     try:
 
-        with open(file_selector(str(benchmarkType)), 'r') as f:
+        with open(file_selector(benchmarkType), 'r') as f:
             data = json.load(f)
 
             total_number_of_batches = {math.floor(len(data) / batchUnit)}
@@ -56,7 +56,12 @@ def generate_batch_data_response(user_request):
             except:
                 print(f"Error writing response to file")
 
-            return data[response_start_line:response_end_line + 1]
+            # building response packet
+            response_data = data[response_start_line:response_end_line + 1]
+            response = [rfwId, end_batch_id, response_data]
+
+        # send response packet to client
+        return response
 
     except:
         print(f"Error reading json file")
@@ -78,6 +83,7 @@ def calculation_tester(data, batchId, end_batch_id, length_of_json_data_files, r
     print("")
 
     print(data[response_start_line:response_end_line + 1])
+
 
 # generate_batch_data()
 
