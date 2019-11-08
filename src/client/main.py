@@ -66,8 +66,6 @@ while 1:
 
     # ------ delete -------------
 
-
-
     request_json = {
         "rfwId": rfwId,
         "benchmarkType": benchmarkType,
@@ -77,8 +75,10 @@ while 1:
         "batchSize": batchSize
     }
 
+    # ------ delete -------------
     sleep(6)
     # print("woke up")
+    # ------ delete -------------
 
     try:
         r = requests.post(post_request_url, json=request_json)
