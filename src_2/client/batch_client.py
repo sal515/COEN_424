@@ -44,51 +44,65 @@ def batch_request(request_json_par):
     return response
 
 
+rfwId = 0
+
 while 1:
 
     # Constraints
     # batchId > 0
 
     # ------ input -------------
-    # userInput = input("Please enter your selection from the options listed above: ")
-    # userInput = userInput.lower()
-    #
-    # if userInput == "2":
-    #     break
-    #
+
+    print(
+        f"Press {1} : To request workload data from the server\n"
+        f"Press {2} : To exit application\n"
+        f"-----------------------------------------------------\n"
+    )
+
+    userInput = input("Please enter your selection from the options listed above: ")
+    userInput = userInput.lower()
+
+    if userInput == "2":
+        break
+
+    rfwId = rfwId + 1
+    print(f"rfwId: {rfwId}")
     # rfwId = input("Please enter RFW ID: ")
-    # benchmarkType = input("Please enter Benchmark Type -> \n1 - DVD_Test, \n2 - DVD_Train, \n3 - NDBench_Test, \n4 - NDBench_Train: \nSelection -> ")
-    # workloadMetric = input("Please enter Workload Metric -> \n1 - CPU, \n2 - NetworkIn, \n3 - NetworkOut, \n4 - Memory): \nSelection -> ")
-    # batchUnit = input("Please enter Batch Unit: ")
-    # batchId = input("Please enter Batch ID: ")
-    # batchSize = input("Please enter Batch Size: ")
+
+    benchmarkType = input(
+        "Please enter Benchmark Type -> \n1 - DVD_Test \n2 - DVD_Train \n3 - NDBench_Test \n4 - NDBench_Train \nSelection -> ")
+    workloadMetric = input(
+        "Please enter Workload Metric -> \n1 - CPU \n2 - NetworkIn \n3 - NetworkOut \n4 - Memory \nSelection -> ")
+    batchUnit = input("Please enter Batch Unit > -1 : ")
+    batchId = input("Please enter Batch ID > 0: ")
+    batchSize = input("Please enter Batch Size > -1: ")
     # ------ input -------------
 
-    # ------ delete -------------
-
-    # rfwId must be > 0
-    rfwId = 1
-    benchmarkType = 1
-    workloadMetric = 4
-    batchUnit = 2
-    batchId = 1
-    batchSize = 3
-
-    # ------ delete -------------
+    # # ------ delete -------------
+    #
+    # # rfwId must be > 0
+    # rfwId = 1
+    # benchmarkType = 1
+    # workloadMetric = 1
+    # batchUnit = 2
+    # batchId = 1
+    # batchSize = 3
+    #
+    # # ------ delete -------------
+    # sleep(6)
+    # # print("woke up")
+    # # ------ delete -------------
+    #
+    # # ------ delete -------------
 
     request_json = {
-        "rfwId": rfwId,
-        "benchmarkType": benchmarkType,
-        "workloadMetric": workloadMetric,
-        "batchUnit": batchUnit,
-        "batchId": batchId,
-        "batchSize": batchSize
+        "rfwId": int(rfwId),
+        "benchmarkType": int(benchmarkType),
+        "workloadMetric": int(workloadMetric),
+        "batchUnit": int(batchUnit),
+        "batchId": int(batchId),
+        "batchSize": int(batchSize)
     }
-
-    # ------ delete -------------
-    sleep(6)
-    # print("woke up")
-    # ------ delete -------------
 
     try:
 
