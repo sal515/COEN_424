@@ -86,8 +86,6 @@ while 1:
         # print(r.json())
         response_batch_data_json = r.json()
 
-        batch_length = len(response_batch_data_json)
-
         response_rfwId = response_batch_data_json[0]
         last_batch = response_batch_data_json[1]
         response_data = response_batch_data_json[2]
