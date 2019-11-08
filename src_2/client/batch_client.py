@@ -101,10 +101,8 @@ while 1:
         # https://www.w3schools.com/python/python_json.asp
         batch_data_2_json = json.loads(response_batch)
 
-        batch_length = len(batch_data_2_json)
-
-        print(f"rfwId: {response_rfwId}")
-        print(f"last_batch_id: {response_last_batch_id}")
+        print(f"request id: {response_rfwId}")
+        print(f"last batch: {response_last_batch_id}")
 
         counter = 0
         for x in batch_data_2_json:
