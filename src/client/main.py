@@ -48,24 +48,25 @@ while 1:
     #     break
     #
     # rfwId = input("Please enter RFW ID: ")
-    # benchmarkType = input("Please enter Benchmark Type -> \n00 - DVD_Test, \n01 - DVD_Train, \n10 - NDBench_Test, \n11 - NDBench_Train: \nSelection -> ")
-    # workloadMetric = input("Please enter Workload Metric: ")
+    # benchmarkType = input("Please enter Benchmark Type -> \n1 - DVD_Test, \n2 - DVD_Train, \n3 - NDBench_Test, \n4 - NDBench_Train: \nSelection -> ")
+    # workloadMetric = input("Please enter Workload Metric -> \n1 - CPU, \n2 - NetworkIn, \n3 - NetworkOut, \n4 - Memory): \nSelection -> ")
     # batchUnit = input("Please enter Batch Unit: ")
     # batchId = input("Please enter Batch ID: ")
     # batchSize = input("Please enter Batch Size: ")
     # ------ input -------------
 
-
     # ------ delete -------------
 
-    rfwId = -1
-    benchmarkType = "00"
-    workloadMetric = -1
+    rfwId = 0
+    benchmarkType = 1
+    workloadMetric = 4
     batchUnit = 2
     batchId = 1
     batchSize = 3
 
     # ------ delete -------------
+
+
 
     request_json = {
         "rfwId": rfwId,
@@ -77,20 +78,29 @@ while 1:
     }
 
     sleep(6)
-    print("woke up")
+    # print("woke up")
 
     try:
         r = requests.post(post_request_url, json=request_json)
 
         # print(r.json())
-        batch_data_json = r.json()
+        response_batch_data_json = r.json()
 
-        batch_length = len(batch_data_json)
+        batch_length = len(response_batch_data_json)
+
+        response_rfwId = response_batch_data_json[0]
+        last_batch = response_batch_data_json[1]
+        response_data = response_batch_data_json[2]
+
+        print(f"request id: {response_rfwId}")
+        print(f"last batch: {last_batch}")
 
         counter = 0
-        for x in batch_data_json:
+        for x in response_data:
             counter = counter + 1
             print(f"{counter} : {x}")
+
+
 
 
     except:
