@@ -1,3 +1,7 @@
+# required libraries:
+# install flask library
+# other libraries might be needed such as jsonify, requests if it doesn't get installed with flask or python package
+
 from flask import Flask
 from flask import request
 
@@ -20,6 +24,7 @@ def json_request():
     # header = request.headers
     user_request = request.json
     response_data = generate_batch_data_response(user_request)
+    # converting json to string to send over http REST API
     return jsonify(response_data)
     # return f"Received request"
 

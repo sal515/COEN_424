@@ -13,6 +13,8 @@
 # limitations under the License.
 """The Python implementation of the GRPC helloworld.Greeter server."""
 
+# Python version 3.7
+
 # install grpc dependencies
 # https://grpc.io/docs/quickstart/python/
 # python batch_server.py

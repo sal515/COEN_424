@@ -13,6 +13,8 @@
 # limitations under the License.
 """The Python implementation of the GRPC helloworld.Greeter client."""
 
+# Python version 3.7
+
 # install grpc dependencies
 # https://grpc.io/docs/quickstart/python/
 #  python batch_client.py
@@ -115,13 +117,21 @@ while 1:
         # https://www.w3schools.com/python/python_json.asp
         batch_data_2_json = json.loads(response_batch)
 
+        print("--- Response ---")
+
         print(f"request id: {response_rfwId}")
         print(f"last batch: {response_last_batch_id}")
+
+        print("received data: ")
 
         counter = 0
         for x in batch_data_2_json:
             counter = counter + 1
-            print(f"{counter} : {x}")
+            # print(f"{counter} : {x}")
+            print(x)
+
+        print(" --- End ouf printout response --- ")
+
 
     except:
         print("Error: Could not call method in the server")

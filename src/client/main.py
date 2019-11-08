@@ -1,5 +1,8 @@
+# Python version 3.7
+
 # required libraries:
-# install requests library if needed:  pip install requests
+# install requests library if needed:
+# pip install requests
 
 import json
 import requests
@@ -84,15 +87,19 @@ while 1:
         last_batch = response_batch_data_json[1]
         response_data = response_batch_data_json[2]
 
+        print("--- Printout Response ---")
+
         print(f"request id: {response_rfwId}")
         print(f"last batch: {last_batch}")
 
+        print("received data: ")
         counter = 0
         for x in response_data:
             counter = counter + 1
-            print(f"{counter} : {x}")
+            # print(f"{counter} : {x}")
+            print(x)
 
-
+        print(" --- End ouf printout response --- ")
 
 
     except:
