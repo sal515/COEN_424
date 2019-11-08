@@ -17,10 +17,22 @@ def file_selector(benchmark_type_val):
     return switcher.get(benchmark_type_val, "null")
 
 
+def workloadMetric_selector(workloadMetric_val):
+    switcher = {
+        1: "CPU",
+        2: "NetworkIn",
+        3: "NetworkOut",
+        4: "Memory"
+    }
+    return switcher.get(workloadMetric_val, "null")
+
+
 def generate_batch_data_response(user_request):
     # Client Request data
     rfwId = user_request['rfwId']  # 1. RFWID
-    benchmarkType = user_request['benchmarkType']  # 2. Benchmark Type DVD or NDBench
+    # Benchmark -> \n1 - DVD_Test, \n2 - DVD_Train, \n3 - NDBench_Test, \n4 - NDBench_Train
+    benchmarkType = user_request['benchmarkType']
+    # Workload Metric -> \n1 - CPU, \n2 - NetworkIn, \n3 - NetworkOut, \n4 - Memory
     workloadMetric = user_request['workloadMetric']  # 3. CPU / NetworkIn
     batchUnit = user_request['batchUnit']  # number of samples
     batchId = user_request['batchId']  # 5th batch or 6th batch etc
@@ -41,9 +53,9 @@ def generate_batch_data_response(user_request):
             response_start_line = (batchUnit * (batchId - 1))
             response_end_line = (batchUnit * ((batchId - 1) + batchSize) - 1)
             response_lines_size = (batchUnit * batchSize)
-            end_batch_id = (batchId - 1) + batchSize
+            last_batch_id = (batchId - 1) + batchSize
 
-            # calculation_tester(data, batchId, end_batch_id, length_of_json_data_files, response_end_line,
+            # calculation_tester(data, batchId, last_batch_id, length_of_json_data_files, response_end_line,
             #                    response_lines_size, response_start_line, total_number_of_batches)
 
             f.close()
@@ -57,8 +69,10 @@ def generate_batch_data_response(user_request):
                 print(f"Error writing response to file")
 
             # building response packet
-            response_data = data[response_start_line:response_end_line + 1]
-            response = [rfwId, end_batch_id, response_data]
+            response_data = [data[i][workloadMetric_selector(workloadMetric)] for i in
+                             range(response_start_line, (response_end_line + 1))]
+            # response_data = data[response_start_line:response_end_line + 1]
+            response = [rfwId, last_batch_id, response_data]
 
         # send response packet to client
         return response
