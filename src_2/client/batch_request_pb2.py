@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='batch',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13\x62\x61tch_request.proto\x12\x05\x62\x61tch\"\x81\x01\n\nbatch_info\x12\r\n\x05rfwId\x18\x01 \x01(\t\x12\x15\n\rbenchmarkType\x18\x02 \x01(\x05\x12\x16\n\x0eworkloadMetric\x18\x03 \x01(\x05\x12\x11\n\tbatchUnit\x18\x04 \x01(\x05\x12\x0f\n\x07\x62\x61tchId\x18\x05 \x01(\x05\x12\x11\n\tbatchSize\x18\x06 \x01(\x05\"(\n\x0e\x62\x61tch_response\x12\x16\n\x0eresponse_batch\x18\x01 \x01(\t2?\n\x05\x62\x61tch\x12\x36\n\x08getBatch\x12\x11.batch.batch_info\x1a\x15.batch.batch_response\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x13\x62\x61tch_request.proto\x12\x05\x62\x61tch\"\x81\x01\n\nbatch_info\x12\r\n\x05rfwId\x18\x01 \x01(\x05\x12\x15\n\rbenchmarkType\x18\x02 \x01(\x05\x12\x16\n\x0eworkloadMetric\x18\x03 \x01(\x05\x12\x11\n\tbatchUnit\x18\x04 \x01(\x05\x12\x0f\n\x07\x62\x61tchId\x18\x05 \x01(\x05\x12\x11\n\tbatchSize\x18\x06 \x01(\x05\"N\n\x0e\x62\x61tch_response\x12\r\n\x05rfwId\x18\x01 \x01(\x05\x12\x15\n\rlast_batch_id\x18\x02 \x01(\x05\x12\x16\n\x0eresponse_batch\x18\x03 \x01(\t2?\n\x05\x62\x61tch\x12\x36\n\x08getBatch\x12\x11.batch.batch_info\x1a\x15.batch.batch_response\"\x00\x62\x06proto3')
 )
 
 
@@ -35,8 +35,8 @@ _BATCH_INFO = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='rfwId', full_name='batch.batch_info.rfwId', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -100,8 +100,22 @@ _BATCH_RESPONSE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='response_batch', full_name='batch.batch_response.response_batch', index=0,
-      number=1, type=9, cpp_type=9, label=1,
+      name='rfwId', full_name='batch.batch_response.rfwId', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='last_batch_id', full_name='batch.batch_response.last_batch_id', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='response_batch', full_name='batch.batch_response.response_batch', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -119,7 +133,7 @@ _BATCH_RESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=162,
-  serialized_end=202,
+  serialized_end=240,
 )
 
 DESCRIPTOR.message_types_by_name['batch_info'] = _BATCH_INFO
@@ -148,8 +162,8 @@ _BATCH = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=204,
-  serialized_end=267,
+  serialized_start=242,
+  serialized_end=305,
   methods=[
   _descriptor.MethodDescriptor(
     name='getBatch',

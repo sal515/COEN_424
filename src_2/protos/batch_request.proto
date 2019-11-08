@@ -39,7 +39,7 @@ service batch {
 
 // The request message contains the required batch information
 message batch_info {
-  string rfwId = 1;
+  int32 rfwId = 1;
   int32 benchmarkType = 2; // 1 - DVD_Test, 2 - DVD_Train, 3 - NDBench_Test, 4 - NDBench_Train
   int32 workloadMetric = 3; // 1 - CPU or 2 - NetworkIn or 3 - NetworkOut or 4 - Memory 
   int32 batchUnit = 4;
@@ -49,7 +49,7 @@ message batch_info {
 
 // The response message containing the batch data
 message batch_response {
-  string rfwId = 1;
+  int32 rfwId = 1;
   int32 last_batch_id = 2; 
   string response_batch = 3;
 

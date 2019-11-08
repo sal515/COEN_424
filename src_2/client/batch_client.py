@@ -15,6 +15,7 @@
 
 # install grpc dependencies
 # https://grpc.io/docs/quickstart/python/
+#  python batch_client.py
 
 from __future__ import print_function
 import logging
@@ -40,11 +41,8 @@ def batch_request(request_json_par):
                                          workloadMetric=request_json_par["workloadMetric"],
                                          batchUnit=request_json_par["batchUnit"],
                                          batchId=request_json_par["batchId"], batchSize=request_json_par["batchSize"]))
-    return response.response_batch
+    return response
 
-
-if __name__ == '__main__':
-    logging.basicConfig()
 
 while 1:
 
@@ -59,20 +57,23 @@ while 1:
     #     break
     #
     # rfwId = input("Please enter RFW ID: ")
-    # benchmarkType = input("Please enter Benchmark Type -> \n00 - DVD_Test, \n01 - DVD_Train, \n10 - NDBench_Test, \n11 - NDBench_Train: \nSelection -> ")
-    # workloadMetric = input("Please enter Workload Metric: ")
+    # benchmarkType = input("Please enter Benchmark Type -> \n1 - DVD_Test, \n2 - DVD_Train, \n3 - NDBench_Test, \n4 - NDBench_Train: \nSelection -> ")
+    # workloadMetric = input("Please enter Workload Metric -> \n1 - CPU, \n2 - NetworkIn, \n3 - NetworkOut, \n4 - Memory): \nSelection -> ")
     # batchUnit = input("Please enter Batch Unit: ")
     # batchId = input("Please enter Batch ID: ")
     # batchSize = input("Please enter Batch Size: ")
     # ------ input -------------
 
     # ------ delete -------------
-    rfwId = "salman"
+
+    # rfwId must be > 0
+    rfwId = 1
     benchmarkType = 1
-    workloadMetric = 1
+    workloadMetric = 4
     batchUnit = 2
     batchId = 1
     batchSize = 3
+
     # ------ delete -------------
 
     request_json = {
@@ -86,16 +87,24 @@ while 1:
 
     # ------ delete -------------
     sleep(6)
-    print("woke up")
+    # print("woke up")
     # ------ delete -------------
 
     try:
-        response_batch = batch_request(request_json)
+
+        response_ = batch_request(request_json)
+
+        response_rfwId = response_.rfwId
+        response_last_batch_id = response_.last_batch_id
+        response_batch = response_.response_batch
 
         # https://www.w3schools.com/python/python_json.asp
         batch_data_2_json = json.loads(response_batch)
 
         batch_length = len(batch_data_2_json)
+
+        print(f"rfwId: {response_rfwId}")
+        print(f"last_batch_id: {response_last_batch_id}")
 
         counter = 0
         for x in batch_data_2_json:
@@ -113,3 +122,6 @@ while 1:
     #     # break
     # except:
     #     print("Error: Could not write to json file")
+
+if __name__ == '__main__':
+    logging.basicConfig()
